@@ -8,9 +8,9 @@ function App() {
   return (
     <div>
       <h1>This is my application</h1>
-      <Card />
-      <Card />
-      <Card />
+      <Card name='Maria' title='CEO' age='29'/>
+      <Card name='Kati' title='cleaner' age='25'/>
+      <Card name='Lisa' title='manager' age='30'/>
     </div>
   )
 }
