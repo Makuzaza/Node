@@ -1,4 +1,4 @@
-import './Card.css'
+
 
 const Card = (props) => {
     return (
@@ -10,4 +10,13 @@ const Card = (props) => {
   );
 };
 
-export default Card
+export default Card;
+
+
+
+// class Welcome extends Component {
+//   render() {
+//     return 
+//     <h1>Hello, {this.props.name}</h1>;
+//   }
+// }
