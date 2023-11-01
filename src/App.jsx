@@ -11,7 +11,14 @@ function App() {
   const [persons, setPersons] = useState([
   { id: 1, name: "Margit", title: "CEO", age: 29 }, 
   { id: 2, name: "Kati", title: "worker", age: 20 }, 
-  { id: 3, name: "Mati", title: "boss", age: 30 }
+  { id: 3, name: "Mati", title: "boss", age: 30 },
+  { id: 4, name: "Mati", title: "boss", age: 30 },
+  { id: 5, name: "Mati", title: "boss", age: 30 },
+  { id: 6, name: "Mati", title: "boss", age: 30 },
+  { id: 7, name: "Mati", title: "boss", age: 30 },
+  { id: 8, name: "Mati", title: "boss", age: 30 },
+  { id: 9, name: "Mati", title: "boss", age: 30 },
+  { id: 10, name: "Mati", title: "boss", age: 30 }
 ]);
 
   return (
@@ -23,7 +30,15 @@ function App() {
 
       <h1>This is my application</h1>
 
-      <Card name={persons[0].name}
+      {persons.map((persons, i) => (
+         <Card key={i}
+         name={persons.name}
+         title={persons.title} 
+         age={persons.age} />
+      // <li key={person.id}>{person.name}</li>
+      ))};
+
+      {/* <Card name={persons[0].name}
       title={persons[0].title} 
       age={persons[0].age}/>
 
@@ -33,7 +48,7 @@ function App() {
 
       <Card name={persons[2].name}
       title={persons[2].title} 
-      age={persons[2].age}/>
+      age={persons[2].age}/> */}
 
       </main>
       <Footer copyright="Copyright"/>
