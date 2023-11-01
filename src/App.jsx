@@ -27,14 +27,13 @@ function App() {
       <Header logo="Maria Kuznetsova"/>
 
       <main>
-
       <h1>This is my application</h1>
 
-      {persons.map((persons, i) => (
+      {persons.map((person, i) => (
          <Card key={i}
-         name={persons.name}
-         title={persons.title} 
-         age={persons.age} />
+         name={person.name}
+         title={person.title} 
+         age={person.age} />
       // <li key={person.id}>{person.name}</li>
       ))};
 
@@ -49,7 +48,6 @@ function App() {
       <Card name={persons[2].name}
       title={persons[2].title} 
       age={persons[2].age}/> */}
-
       </main>
       <Footer copyright="Copyright"/>
       </div>
