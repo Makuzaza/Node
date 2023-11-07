@@ -1,11 +1,12 @@
-const Card = ({name, title, age, id}) => {
+const Card = ({name, title, age, id, click}) => {
+  
     return (
     <div class='cards'>
       <h2>Name: {name}</h2>
       <p>Title: {title}</p>
       <p>Age: {age}</p>
       <p>ID: {id}</p>
-      <button>Close</button>
+      <button onClick={click}>Remove</button>
     </div>
   );
 };
@@ -16,6 +17,7 @@ const Card = ({name, title, age, id}) => {
 //     <h2>Name: {props.name}</h2>
 //     <p>Title: {props.title}</p>
 //     <p>Age: {props.age}</p>
+//     <button onClick={props.click}>Close</button>
 //   </div>
 // );
 // };
