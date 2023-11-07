@@ -6,6 +6,7 @@
   color-scheme: light dark;
   color: rgba(28, 21, 21, 0.87);
   background-color: #cc776c;
+  background-image: url("https://images.unsplash.com/photo-1465189684280-6a8fa9b19a7a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8bmF0dXJlLHdhdGVyfHx8fHx8MTY5OTM0ODAyNg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600");
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -46,15 +47,13 @@ button {
   font-family: inherit;
   background-color: #7ee364;
   cursor: pointer;
-  transition: border-color 0.25s;
+  margin-bottom: 20px;
 }
+
 button:hover {
-  border-color: #646cff;
+  background-color: #646cff;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
 
 @media (prefers-color-scheme: light) {
   :root {

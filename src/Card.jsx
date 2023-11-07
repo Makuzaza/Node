@@ -5,6 +5,7 @@ const Card = ({name, title, age, id}) => {
       <p>Title: {title}</p>
       <p>Age: {age}</p>
       <p>ID: {id}</p>
+      <button>Close</button>
     </div>
   );
 };

@@ -77,8 +77,10 @@ main {
 .cards {
   display: inline-block;
   margin: 20px;
-  background-color: rgb(205, 211, 151);
+  background-color: rgb(255, 255, 255);
   padding: 5px;
+  border: dotted;
+  border-radius: 5px;
 }
 
 
