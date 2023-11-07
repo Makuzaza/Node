@@ -28,15 +28,18 @@ function App() {
 
       <main>
       <h1>This is my application</h1>
-
-      {persons.map((person, i) => (
-         <Card key={i}
-         name={person.name}
-         title={person.title} 
-         age={person.age} />
+<div className='card'>
+      {persons.map((person) => (
+         <Card key={person.id}
+         {...person}/>
+        //  <Card key={person.id}
+        //  name={person.name}
+        //  title={person.title} 
+        //  age={person.age} 
+        //  id={person.id}/>
       // <li key={person.id}>{person.name}</li>
       ))};
-
+</div>
       {/* <Card name={persons[0].name}
       title={persons[0].title} 
       age={persons[0].age}/>
