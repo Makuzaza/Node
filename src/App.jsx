@@ -1,12 +1,28 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import {useState} from 'react'
-import './App.css'
-import Card from './Card'
-import Header from './header'
-import Footer from './footer'
-import image from './assets/react.svg'
+import {useState} from 'react';
+import './App.css';
+import Card from './Card';
+import Header from './header';
+import Footer from './footer';
+import image from './assets/react.svg';
 
+// function Greeting({name}) {
+//   if (name === 'Maria') {
+//     return <p>Welcome, {name}</p>
+//   } 
+//   return <p>Please, log in</p>
+// };
+
+function Greeting({name}) {
+  return ((name === 'Maria') ? <p className='welcome'>Welcome, {name}</p>: <p className='please'>Please, log in</p>)
+};
+
+// function Greeting({isLoggedIn}) {
+//   if (isLoggedIn) {
+//     return <UserGreeting />;
+//   } return <GuestGreeting />;
+// }
 
 function App() {
   
@@ -32,6 +48,8 @@ function App() {
     <div>   
       <Header logo="Maria Kuznetsova"/>
       <main>
+      {/* <Greeting isLoggedIn={false} />; */}
+        <Greeting name="Maria" />
       <h1>This is my application</h1>
       <img src={image} alt="React logo" />
 <div className='card'>
