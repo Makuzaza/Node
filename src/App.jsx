@@ -30,18 +30,21 @@ function App() {
     { id: 1, name: "Margit", title: "CEO", age: 29 }, 
     { id: 2, name: "Kati", title: "worker", age: 20 }, 
     { id: 3, name: "Mati", title: "boss", age: 30 },
-    { id: 4, name: "Mati", title: "boss", age: 30 },
-    { id: 5, name: "Mati", title: "boss", age: 30 },
-    { id: 6, name: "Mati", title: "boss", age: 30 },
-    { id: 7, name: "Mati", title: "boss", age: 30 },
-    { id: 8, name: "Mati", title: "boss", age: 30 },
-    { id: 9, name: "Mati", title: "boss", age: 30 },
-    { id: 10, name: "Mati", title: "boss", age: 30 }
+    { id: 4, name: "Pati", title: "boss", age: 30 },
   ]);
+
+const [search, setSearch] = useState('');
+const [something, setSomething] = useState({});
   
+
   const removeHandler = (id) => {
     const updatedArray = persons.filter((person) => person.id !== id); 
     setPersons(updatedArray)
+  };
+
+  const searchHandler = (event) => {
+    console.log(event)
+    console.log(event.target.value)
   }
 
   return (
@@ -52,6 +55,7 @@ function App() {
         <Greeting name="Maria" />
       <h1>This is my application</h1>
       <img src={image} alt="React logo" />
+      <div><input type="text" onChange={searchHandler}></input></div>
 <div className='card'>
       {persons.map((person) => 
       (<Card key={person.id}
