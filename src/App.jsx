@@ -34,17 +34,16 @@ function App() {
   ]);
 
 const [search, setSearch] = useState('');
-const [something, setSomething] = useState({});
   
-
   const removeHandler = (id) => {
     const updatedArray = persons.filter((person) => person.id !== id); 
     setPersons(updatedArray)
   };
 
   const searchHandler = (event) => {
-    console.log(event)
-    console.log(event.target.value)
+    // console.log(event)
+    // console.log(event.target.value)
+    setSearch(event.target.value);
   }
 
   return (
@@ -57,7 +56,7 @@ const [something, setSomething] = useState({});
       <img src={image} alt="React logo" />
       <div><input type="text" onChange={searchHandler}></input></div>
 <div className='card'>
-      {persons.map((person) => 
+      {persons.filter(fox => fox.name.toLowerCase().includes(search.toLowerCase())).map((person) => 
       (<Card key={person.id}
         {...person}
         click={() => removeHandler(person.id)}
