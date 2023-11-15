@@ -1,28 +1,12 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import {useState} from 'react';
+import { useState } from 'react';
 import './App.css';
 import Card from './Card';
 import Header from './header';
 import Footer from './footer';
 import image from './assets/react.svg';
-
-// function Greeting({name}) {
-//   if (name === 'Maria') {
-//     return <p>Welcome, {name}</p>
-//   } 
-//   return <p>Please, log in</p>
-// };
-
-function Greeting({name}) {
-  return ((name === 'Maria') ? <p className='welcome'>Welcome, {name}</p>: <p className='please'>Please, log in</p>)
-};
-
-// function Greeting({isLoggedIn}) {
-//   if (isLoggedIn) {
-//     return <UserGreeting />;
-//   } return <GuestGreeting />;
-// }
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Home from './routes/home';
+import Persons from './routes/persons';
 
 function App() {
   
@@ -41,17 +25,19 @@ const [search, setSearch] = useState('');
   };
 
   const searchHandler = (event) => {
-    // console.log(event)
-    // console.log(event.target.value)
     setSearch(event.target.value);
   }
 
+const router = createBrowserRouter([
+  {path:'/', element:<Home/>},
+  {path:'/persons', element:<Persons searchHandler={searchHandler} removeHandler={removeHandler} search={search} persons={persons}/>}
+]);
+
   return (
     <div>   
-      <Header logo="Maria Kuznetsova"/>
+      <RouterProvider router = {router} />
+      {/* <Header logo="Maria Kuznetsova"/>
       <main>
-      {/* <Greeting isLoggedIn={false} />; */}
-        <Greeting name="Maria" />
       <h1>This is my application</h1>
       <img src={image} alt="React logo" />
       <div><input type="text" onChange={searchHandler}></input></div>
@@ -61,28 +47,10 @@ const [search, setSearch] = useState('');
         {...person}
         click={() => removeHandler(person.id)}
         />
-        //  <Card key={person.id}
-        //  name={person.name}
-        //  title={person.title} 
-        //  age={person.age} 
-        //  id={person.id}/>
-        // <li key={person.id}>{person.name}</li>
         ))};
 </div>
-      {/* <Card name={persons[0].name}
-      title={persons[0].title} 
-      age={persons[0].age}/>
-      
-      <Card name={persons[1].name}
-      title={persons[1].title} 
-      age={persons[1].age}/>
-      
-      <Card name={persons[2].name}
-      title={persons[2].title} 
-    age={persons[2].age}/> */}
-    {/* <button onClick={eventHandler}>Click me</button> */}
       </main>
-      <Footer copyright="Copyright"/>
+      <Footer copyright="Copyright"/> */}
       </div>
   );
 };
