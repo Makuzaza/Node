@@ -1,12 +1,12 @@
-import Header from '../header';
-import Footer from '../footer';
-import Card from '../Card';
+import Header from '../components/header';
+import Footer from '../components/footer';
+import Card from '../components/Card';
 import image from '../assets/react.svg';
 
 function Persons ({searchHandler, persons, search, removeHandler}) {
     return (  
         <>  
-    <Header />
+    
       <main>
       <h1>Persons:</h1>
       <img src={image} alt="React logo" />
@@ -20,7 +20,7 @@ function Persons ({searchHandler, persons, search, removeHandler}) {
         ))};
 </div>
       </main>
-      <Footer copyright="Copyright"/> 
+      
        </> 
     );
 }

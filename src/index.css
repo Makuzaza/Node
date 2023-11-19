@@ -77,3 +77,8 @@ button:hover {
 .please {
   color: #7ee364;
 }
+
+a.active {
+  color: red;
+  border-bottom: 1px solid red;
+}

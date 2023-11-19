@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import './App.css';
-import Card from './Card';
-import Header from './header';
-import Footer from './footer';
+import Card from './components/Card';
+import Header from './components/header';
+import Footer from './components/footer';
 import image from './assets/react.svg';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './routes/home';
 import Persons from './routes/persons';
+import Root from './routes/root';
+import ErrorPage from './routes/error';
 
 function App() {
   
@@ -29,8 +31,20 @@ const [search, setSearch] = useState('');
   }
 
 const router = createBrowserRouter([
-  {path:'/', element:<Home/>},
-  {path:'/persons', element:<Persons searchHandler={searchHandler} removeHandler={removeHandler} search={search} persons={persons}/>}
+
+  // { path: '/auth', element: <AuthLayout/>, children [{ path: '/login', element: <LogIn/>}, {}] },
+
+  { path: '/', element:<Root/>, 
+  errorElement: <ErrorPage/>, children: [
+    { path: '/', element: <Home/> },
+    { path: '/persons', 
+    element: (<Persons 
+      searchHandler={searchHandler} 
+      removeHandler={removeHandler} 
+      search={search} 
+      persons={persons}/>),
+    }
+  ]}
 ]);
 
   return (
