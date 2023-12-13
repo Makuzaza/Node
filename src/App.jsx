@@ -9,6 +9,7 @@ import Home from './routes/home';
 import Persons from './routes/persons';
 import Root from './routes/root';
 import ErrorPage from './routes/error';
+import Posts from './routes/posts';
 
 function App() {
   
@@ -43,7 +44,8 @@ const router = createBrowserRouter([
       removeHandler={removeHandler} 
       search={search} 
       persons={persons}/>),
-    }
+    },
+    { path: '/posts', element: <Posts/> }
   ]}
 ]);
 
