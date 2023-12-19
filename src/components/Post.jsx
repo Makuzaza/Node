@@ -1,13 +1,14 @@
 import React from 'react';
 
-const Post = ({id, title, completed}) => {
+function Post({firstName, lastName, phone, role, message }) {
   return (
-    <>
-        <p>{id}</p>
-        <h2>{title}</h2>
-        <p>{completed}</p>
-  </>
-  )
+    <div className="post">
+      <p>{firstName} {lastName}</p>
+      <p>{phone}</p>
+      <p>{role}</p>
+      <p>{message}</p>
+    </div>
+  );
 }
 
 export default Post;

@@ -82,3 +82,19 @@ a.active {
   color: red;
   border-bottom: 1px solid red;
 }
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.post {
+  background-color: white;
+  border-radius:10px;
+  box-shadow: 5px 5px 25px #4b4b4b;
+  padding: 1rem;
+  max-width: 33%;
+  color: #333
+}
